@@ -1736,7 +1736,7 @@ class sr_subscribe(sr_instances):
         # NOTE : normpath keeps '/a/b/c' and '//a/b/c' the same
         #        Everywhere else // or /../ are corrected.
         #        but if the number of / starting the path > 2  ... it will result into 1 /
-
+        new_dir = os.path.join(self.cwd, new_dir)
         self.msg.new_dir     = os.path.normpath(new_dir)
         if sys.platform == 'win32':
             self.msg.new_dir = self.msg.new_dir.replace('\\','/')

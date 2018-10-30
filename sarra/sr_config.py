@@ -1240,7 +1240,7 @@ class sr_config:
              for dwword in DW :
                  nddword += self.sundew_matchPattern(BN,EN,BP,dwword,dwword)
 
-             ndestDir += "/" + nddword 
+             ndestDir = os.path.join(ndestDir, nddword)
 
         return ndestDir
 

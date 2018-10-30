@@ -14,8 +14,8 @@ class File_Log(object):
         parent.logger.debug("file_log initialized")
           
     def perform(self,parent):
-
-        parent.logger.info("file_log downloaded to: %s/%s" % ( parent.msg.new_dir, parent.msg.new_file) )
+        joined_path = os.path.join(parent.msg.new_dir, parent.msg.new_file)
+        parent.logger.info("file_log downloaded to: %s" % ( os.path.realpath(joined_path) ))
         return True
 
 file_log = File_Log(self)
